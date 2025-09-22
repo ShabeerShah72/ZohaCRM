@@ -1,102 +1,76 @@
 Zoho CRM Deal Stage Workflow Automation
 
 📌 Overview
-
-This project delivers an end-to-end automation framework in Zoho CRM that manages deal stages, follow-ups, escalations, and notifications with zero manual intervention. It is designed for enterprises seeking improved sales efficiency, accountability, and revenue assurance.
+This project provides a complete automation framework for Zoho CRM Deal Stage Management, enabling organizations to streamline sales processes with zero manual intervention.
+Designed for large enterprises and scaling businesses, this solution ensures that every deal is properly followed up, escalated when necessary, and fully auditable — improving sales efficiency, accountability, and revenue assurance.
 
 🚀 Features
 
-Automated Stage Workflows – Creates follow-up tasks when deals reach key milestones.
-
-Escalation Management – Detects stalled deals (e.g., stuck at “Proposal Sent”) and escalates to managers.
-
-Stalled Deal Detection – Flags inactive deals and applies scoring logic.
-
-Centralized Audit Logging – Custom Deal_Audit module records every automation event.
-
-Notifications & Integrations – Sends alerts via email, Slack/Teams, and secure webhooks.
-
-Configurable Settings – All thresholds, templates, and endpoints managed via a config object.
+Automated Stage Workflows – Creates follow-up tasks when deals hit key milestones.
+Escalation Management – Automatically escalates stalled deals (e.g., stuck at Proposal Sent) to managers.
+Stalled Deal Detection – Flags inactive deals and applies scoring logic for prioritization.
+Centralized Audit Logging – Records every automation event in a custom Deal_Audit module.
+Notifications & Integrations – Sends alerts via Email, Slack, Microsoft Teams, or secure webhooks.
+Configurable Settings – Thresholds, templates, and endpoints managed via a central config object.
 
 🛠 Tech Stack
 
 Zoho CRM Developer Edition
-
-Deluge Scripting for logic and automation
-
+Deluge Scripting for workflow automation logic
 Workflow Rules & Scheduled Jobs for triggers
-
-Custom Modules & Fields for deal scoring & audit trail
-
+Custom Modules & Fields for scoring & audit trail
 Slack/Teams Webhooks & REST APIs for external notifications
 
 📂 Project Structure
-
 Zoho-Deal-Automation/
 ├── src/
-|   ├── components
-|   |   └── ui
-│   ├── hooks
-|   |   ├── use-mobile.tsx
-|   │   └── use-toast.tsx
-│   ├── lib
-│   └── pages
-├── components.json/
-│ 
-├── eslint.config.js/
-│   
-├── index.html/
-│   
-├── package-lock.json/
-|
-├── postcss.config.ts/
-│   
-├── tailwind.config.ts/
-|
-├── tsconfig.json/
-|
-├── tsconfig.app.json/
-│   
-├── tsconfig.node.json/
-│   
-├── vita.cofig.ts/
-│   
+│   ├── components/
+│   │   └── ui/
+│   ├── hooks/
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.tsx
+│   ├── lib/
+│   └── pages/
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── postcss.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+├── vite.config.ts
 └── README.md
 
 
 ⚙️ Deployment Steps
 
-Create custom fields in Deals (Next_Followup_Date, Deal_Score, Stalled, Escalation_Level).
+Create custom fields in Deals:
 
-Create custom module Deal_Audit with logging fields.
-
-Upload Deluge functions into Zoho CRM Functions.
-
+Next_Followup_Date
+Deal_Score
+Stalled
+Escalation_Level
+Create a custom module Deal_Audit with logging fields.
+Upload Deluge functions into Zoho CRM → Functions.
 Configure workflow rules for deal stage changes.
-
-Set up scheduled jobs for reconciliation.
-
+Set up scheduled jobs for deal reconciliation.
 Import email templates for notifications.
-
-Add Slack/Teams webhook URLs or external system endpoints in config.
+Add Slack/Teams webhook URLs or external endpoints in config.
 
 ✅ Testing Scenarios
 
-Deal moved to Sales Qualified → Follow-up task + notification created.
-
-Deal stuck in Proposal Sent for threshold days → Escalation task + email sent to manager.
-
-Inactive deal → System flags as Stalled.
-
-Manual Force Re-Evaluation → Automation re-runs and logs in Deal_Audit.
+Deal → Sales Qualified → Follow-up task + notification created.
+Deal stuck at Proposal Sent (past threshold) → Escalation + manager email triggered.
+Inactive deal → Flagged as Stalled with score update.
+Manual re-check → Automation re-runs and logs event in Deal_Audit.
 
 🔐 Security
 
-Outgoing API/webhook calls signed with HMAC-SHA256.
-
-Secrets stored securely in Zoho Vault/config module.
-
-Retry logic for failed webhooks.
+All API/webhook calls signed with HMAC-SHA256.
+Secrets securely stored in Zoho Vault/config module.
+Built-in retry logic for failed webhooks.
 
 📊 Workflow Diagram
 flowchart TD
@@ -111,12 +85,8 @@ flowchart TD
 
 📜 Outcome
 
-This solution ensures:
-
-Timely follow-ups on deals
-
+With this solution, organizations achieve:
+Timely follow-ups across all deals
 Reduced deal leakage due to missed actions
-
-Higher accountability with escalation workflows
-
-Improved visibility through audit logging and notifications
+Higher accountability with automated escalations
+Complete visibility via centralized audit logs & notifications
