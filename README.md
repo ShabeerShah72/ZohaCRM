@@ -1,73 +1,58 @@
-🤖 Zoho CRM Deal Stage Workflow Automation
+# Zoho CRM Deal Stage Workflow Automation
 
 An enterprise-grade automation framework for Zoho CRM that streamlines deal stage management, automates follow-ups, handles escalations, and ensures accountability with centralized audit logging.
 
+---
   
-✨ Features
+##✨ Features
 
-📌 Automated Stage Workflows – Follow-up tasks created when deals reach milestones
-⚡ Escalation Management – Detects stalled deals and escalates to managers
-⏳ Stalled Deal Detection – Flags inactive deals with scoring logic
-🗂️ Centralized Audit Logging – Custom Deal_Audit module for all automation events
-📢 Notifications & Integrations – Alerts via Email, Slack, Teams, or secure webhooks
-⚙️ Configurable Settings – All thresholds, templates, and endpoints managed in config
+-📌 Automated Stage Workflows – Follow-up tasks created when deals reach milestones
+-⚡ Escalation Management – Detects stalled deals and escalates to managers
+-⏳ Stalled Deal Detection – Flags inactive deals with scoring logic
+-🗂️ Centralized Audit Logging – Custom Deal_Audit module for all automation events
+-📢 Notifications & Integrations – Alerts via Email, Slack, Teams, or secure webhooks
+-⚙️ Configurable Settings – All thresholds, templates, and endpoints managed in config
 
-🖥️ Demo
+---
 
-Workflow: Fully automated deal stage lifecycle with zero manual intervention
+##🖥️ Demo
 
-Integrations: Slack/Teams/Email + secure API webhooks
+- Workflow: Fully automated deal stage lifecycle with zero manual intervention
+- Integrations: Slack/Teams/Email + secure API webhooks
+- Audit Trail: Transparent event logging in Zoho CRM custom module
+- What you can manage:
+- Deal Stages & Follow-Ups
+- Escalations for Stalled Deals
+- Scoring & Prioritization
+- Notifications & Alerts
+- Historical Logs
 
-Audit Trail: Transparent event logging in Zoho CRM custom module
+---
 
-What you can manage:
-
-Deal Stages & Follow-Ups
-
-Escalations for Stalled Deals
-
-Scoring & Prioritization
-
-Notifications & Alerts
-
-Historical Logs
-
-🚀 Quick Start
+##🚀 Quick Start
 Prerequisites
 
-Zoho CRM Developer Edition
+- Zoho CRM Developer Edition
+- Access to Deluge Scripting
+- Slack/Teams webhook (optional)
+- Zoho Vault for secret storage
+- Installation
+  
+#  Create custom fields in Deals:
+- Next_Followup_Date
+- Deal_Score
+- Stalled
+- Escalation_Level
+- Create custom module Deal_Audit.
+- Upload Deluge functions to Zoho CRM Functions.
+- Configure workflow rules for deal stage changes.
+- Set up scheduled jobs for reconciliation.
+- Import notification templates.
+- Add Slack/Teams webhooks in config.
 
-Access to Deluge Scripting
+---
 
-Slack/Teams webhook (optional)
-
-Zoho Vault for secret storage
-
-Installation
-
-Create custom fields in Deals:
-
-Next_Followup_Date
-
-Deal_Score
-
-Stalled
-
-Escalation_Level
-
-Create custom module Deal_Audit.
-
-Upload Deluge functions to Zoho CRM Functions.
-
-Configure workflow rules for deal stage changes.
-
-Set up scheduled jobs for reconciliation.
-
-Import notification templates.
-
-Add Slack/Teams webhooks in config.
-
-🏗️ Project Structure
+##🏗️ Project Structure
 Zoho-Deal-Automation/
 ├── src/
 │   ├── components/
@@ -89,7 +74,9 @@ Zoho-Deal-Automation/
 ├── vite.config.ts
 └── README.md
 
-🔧 Configuration
+---
+
+##🔧 Configuration
 
 Deal Thresholds & Escalations → Defined in config object
 
@@ -105,7 +92,9 @@ Escalation levels
 
 Notification channels
 
-🌐 API / Workflow Events
+---
+
+##🌐 API / Workflow Events
 Stage Change → Follow-up
 
 Trigger: Deal moves to Sales Qualified
@@ -130,7 +119,9 @@ Trigger: Admin request
 
 Action: Automation re-runs, logged in Deal_Audit
 
-📊 Workflow Diagram
+---
+
+##📊 Workflow Diagram
 flowchart TD
     A[Deal Stage Change] --> B{Stage = Sales Qualified?}
     B -- Yes --> C[Create Follow-up Task]
@@ -141,12 +132,14 @@ flowchart TD
     E --> G
     F --> G
 
-🔒 Security Features
+##🔒 Security Features
 
 🛡️ HMAC-SHA256 signing for external API/webhook calls
 🔑 Secrets stored in Zoho Vault or secure config module
 ♻️ Retry logic for failed notifications
 ✅ Role-based access within Zoho CRM
+
+---
 
 📝 Outcome
 
@@ -158,7 +151,9 @@ Higher accountability through escalations
 
 Improved visibility with centralized logging
 
-🤝 Contributing
+---
+
+##🤝 Contributing
 
 Fork the repository
 
@@ -178,13 +173,17 @@ Document Deluge functions clearly
 
 Add test cases for workflows
 
-📞 Support
+---
+
+##📞 Support
 
 Issues: GitHub Issues
 
 Email: shabeershah4777@gmail.com
 
-🔄 Changelog
+---
+
+##🔄 Changelog
 
 v1.2.0 (Latest)
 ✅ Added escalation workflows
@@ -201,3 +200,4 @@ v1.0.0
 
 ⭐ Star this repository if you found it helpful!
 Made with ❤️ by Syed Shabeer Abbas Shah
+
