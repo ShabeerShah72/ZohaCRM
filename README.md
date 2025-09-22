@@ -1,27 +1,73 @@
-Zoho CRM Deal Stage Workflow Automation
+🤖 Zoho CRM Deal Stage Workflow Automation
 
-📌 Overview
-This project provides a complete automation framework for Zoho CRM Deal Stage Management, enabling organizations to streamline sales processes with zero manual intervention.
-Designed for large enterprises and scaling businesses, this solution ensures that every deal is properly followed up, escalated when necessary, and fully auditable — improving sales efficiency, accountability, and revenue assurance.
+An enterprise-grade automation framework for Zoho CRM that streamlines deal stage management, automates follow-ups, handles escalations, and ensures accountability with centralized audit logging.
 
-🚀 Features
+  
+✨ Features
 
-Automated Stage Workflows – Creates follow-up tasks when deals hit key milestones.
-Escalation Management – Automatically escalates stalled deals (e.g., stuck at Proposal Sent) to managers.
-Stalled Deal Detection – Flags inactive deals and applies scoring logic for prioritization.
-Centralized Audit Logging – Records every automation event in a custom Deal_Audit module.
-Notifications & Integrations – Sends alerts via Email, Slack, Microsoft Teams, or secure webhooks.
-Configurable Settings – Thresholds, templates, and endpoints managed via a central config object.
+📌 Automated Stage Workflows – Follow-up tasks created when deals reach milestones
+⚡ Escalation Management – Detects stalled deals and escalates to managers
+⏳ Stalled Deal Detection – Flags inactive deals with scoring logic
+🗂️ Centralized Audit Logging – Custom Deal_Audit module for all automation events
+📢 Notifications & Integrations – Alerts via Email, Slack, Teams, or secure webhooks
+⚙️ Configurable Settings – All thresholds, templates, and endpoints managed in config
 
-🛠 Tech Stack
+🖥️ Demo
+
+Workflow: Fully automated deal stage lifecycle with zero manual intervention
+
+Integrations: Slack/Teams/Email + secure API webhooks
+
+Audit Trail: Transparent event logging in Zoho CRM custom module
+
+What you can manage:
+
+Deal Stages & Follow-Ups
+
+Escalations for Stalled Deals
+
+Scoring & Prioritization
+
+Notifications & Alerts
+
+Historical Logs
+
+🚀 Quick Start
+Prerequisites
 
 Zoho CRM Developer Edition
-Deluge Scripting for workflow automation logic
-Workflow Rules & Scheduled Jobs for triggers
-Custom Modules & Fields for scoring & audit trail
-Slack/Teams Webhooks & REST APIs for external notifications
 
-📂 Project Structure
+Access to Deluge Scripting
+
+Slack/Teams webhook (optional)
+
+Zoho Vault for secret storage
+
+Installation
+
+Create custom fields in Deals:
+
+Next_Followup_Date
+
+Deal_Score
+
+Stalled
+
+Escalation_Level
+
+Create custom module Deal_Audit.
+
+Upload Deluge functions to Zoho CRM Functions.
+
+Configure workflow rules for deal stage changes.
+
+Set up scheduled jobs for reconciliation.
+
+Import notification templates.
+
+Add Slack/Teams webhooks in config.
+
+🏗️ Project Structure
 Zoho-Deal-Automation/
 ├── src/
 │   ├── components/
@@ -43,34 +89,46 @@ Zoho-Deal-Automation/
 ├── vite.config.ts
 └── README.md
 
+🔧 Configuration
 
-⚙️ Deployment Steps
+Deal Thresholds & Escalations → Defined in config object
 
-Create custom fields in Deals:
+Webhook Endpoints → Secure URLs with HMAC-SHA256 signing
 
-Next_Followup_Date
-Deal_Score
-Stalled
-Escalation_Level
-Create a custom module Deal_Audit with logging fields.
-Upload Deluge functions into Zoho CRM → Functions.
-Configure workflow rules for deal stage changes.
-Set up scheduled jobs for deal reconciliation.
-Import email templates for notifications.
-Add Slack/Teams webhook URLs or external endpoints in config.
+Notification Templates → Stored in Zoho CRM / Vault
 
-✅ Testing Scenarios
+Modify via config:
 
-Deal → Sales Qualified → Follow-up task + notification created.
-Deal stuck at Proposal Sent (past threshold) → Escalation + manager email triggered.
-Inactive deal → Flagged as Stalled with score update.
-Manual re-check → Automation re-runs and logs event in Deal_Audit.
+Follow-up intervals
 
-🔐 Security
+Escalation levels
 
-All API/webhook calls signed with HMAC-SHA256.
-Secrets securely stored in Zoho Vault/config module.
-Built-in retry logic for failed webhooks.
+Notification channels
+
+🌐 API / Workflow Events
+Stage Change → Follow-up
+
+Trigger: Deal moves to Sales Qualified
+
+Action: Follow-up task created + notification
+
+Escalation Workflow
+
+Trigger: Deal stuck at Proposal Sent beyond threshold
+
+Action: Escalation task + manager notified
+
+Stalled Deal Detection
+
+Trigger: Inactive deal for N days
+
+Action: Deal flagged + score updated
+
+Manual Re-Evaluation
+
+Trigger: Admin request
+
+Action: Automation re-runs, logged in Deal_Audit
 
 📊 Workflow Diagram
 flowchart TD
@@ -83,10 +141,63 @@ flowchart TD
     E --> G
     F --> G
 
-📜 Outcome
+🔒 Security Features
 
-With this solution, organizations achieve:
-Timely follow-ups across all deals
-Reduced deal leakage due to missed actions
-Higher accountability with automated escalations
-Complete visibility via centralized audit logs & notifications
+🛡️ HMAC-SHA256 signing for external API/webhook calls
+🔑 Secrets stored in Zoho Vault or secure config module
+♻️ Retry logic for failed notifications
+✅ Role-based access within Zoho CRM
+
+📝 Outcome
+
+Timely follow-ups for every deal
+
+Reduced leakage due to missed actions
+
+Higher accountability through escalations
+
+Improved visibility with centralized logging
+
+🤝 Contributing
+
+Fork the repository
+
+Create your feature branch (git checkout -b feature/amazing-feature)
+
+Commit changes (git commit -m 'Add amazing feature')
+
+Push branch (git push origin feature/amazing-feature)
+
+Open a Pull Request
+
+Development Guidelines:
+
+Follow Zoho coding standards
+
+Document Deluge functions clearly
+
+Add test cases for workflows
+
+📞 Support
+
+Issues: GitHub Issues
+
+Email: shabeershah4777@gmail.com
+
+🔄 Changelog
+
+v1.2.0 (Latest)
+✅ Added escalation workflows
+✅ Enhanced stalled deal detection
+✅ Secure webhook signing
+✅ Improved audit logging
+
+v1.1.0
+✅ Introduced custom Deal_Audit module
+✅ Configurable thresholds & templates
+
+v1.0.0
+✅ Initial release with stage-based follow-up tasks
+
+⭐ Star this repository if you found it helpful!
+Made with ❤️ by Syed Shabeer Abbas Shah
